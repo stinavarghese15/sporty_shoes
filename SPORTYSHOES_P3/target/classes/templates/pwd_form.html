@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Password change</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>Password change</h1>
+        </div>
+        <form th:action="@{/pwdChange}" th:object="${admin}"
+            method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Enter user Id: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{adminId}" class="form-control" required />
+                </div>
+            </div>
+             
+             <div class="form-group row">
+                <label class="col-4 col-form-label">Admin User Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{adminName}" class="form-control"
+                            required minlength="2" maxlength="20"/>
+                </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Confirm New Password: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{adminPwd}" class="form-control"
+                            required minlength="2" maxlength="20" />
+                </div>
+            </div>
+            
+             
+            
+             
+            <div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

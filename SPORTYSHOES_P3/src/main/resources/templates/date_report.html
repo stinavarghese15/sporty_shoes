@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Purchase on date basis</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div  class="container text-center">
+<div>
+	<h3>Report of the purchase</h3>
+	<div>
+		<table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Purchase Date</th>
+                    <th>Buyer Name</th>
+                    <th>Buyer Email</th>
+                    <th>Product Category</th>
+                    <th>Price of the Product</th>
+                   
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="purchase: ${listdate}">
+                    <td th:text="${purchase.date_product}">Date of the product</td>
+                    <td th:text="${purchase.user_name}">Buyer name</td>
+                    <td th:text="${purchase.user_email}">Buyer email</td>
+                    <td th:text="${purchase.category_product}">product category</td>
+                	 <td th:text="${purchase.price_product}">Product price</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+	
+	
+	
+	
+	</div>
+	
+  
+</div>
+<div>
+
+     
+        <h4><a th:href="@{/home}">Home</a></h4> 
+</div>
+</div>
+</body>
+</html>

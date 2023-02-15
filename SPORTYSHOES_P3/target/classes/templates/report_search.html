@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Products on category basis</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+<title>SEARCH</title>
+</head>
+<body>
+<div  class="container text-center">
+<div>
+	<h3>Purchase report based on date</h3>
+  <form th:action="@{/pur_report}" method="get">
+  <input type="text" name="date" th:value="${date}"  placeholder="enter the date to get report" size="50" >
+  <button type="submit" class="btn btn-info" >Enter</button>
+  
+  </form>
+</div>
+<div>
+
+     
+        <h4><a th:href="@{/home}">Home</a></h4> 
+</div>
+</div>
+</body>
+</html>
